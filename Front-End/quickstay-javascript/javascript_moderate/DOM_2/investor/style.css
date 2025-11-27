@@ -1,0 +1,15 @@
+#main{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+#main>div{
+    /* border: 3px solid red; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#logo{
+    width: 150px;
+}

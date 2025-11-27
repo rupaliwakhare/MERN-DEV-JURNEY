@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addmision_Database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div>
+    <nav>
+        <ul>
+         <li>Add Students</li>
+         <li>Students Database</li>
+         <li>Admitted</li>
+         <li>Rejected</li>
+        </ul>
+     </nav>
+ 
+   </div>
+
+   <div>
+    <form>
+        <label>Name</label><br>
+        <input type="text" placeholder="Enter your name">
+        <br>
+       
+        <select>
+            <option value="">Select your gender </option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Unisex">Unisex</option>
+        </select>
+        <br>
+        <label>Enter your email</label>
+        <input type="email" placeholder="Enter your email">
+        <br>
+        <label>Mobile Number</label>
+        <input type="number" placeholder="Enter your number">
+        <br>
+        <select>
+            <option value="">Choose your course</option>
+            <option value="Webdevelopment">Webdevelopment</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Backtend">Backend</option>
+            <option value="UI/UX">UI/UX</option>
+            <option value="Gamedevelopment">Gamedevelopment</option>
+        </select>
+        <br>
+        <input type="submit">
+        
+    </form>
+   </div>
+    
+</body>
+<script>
+  document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form from refreshing the page
+
+    // Get form values
+    const name = document.querySelector('input[type="text"]').value.trim();
+    const gender = document.querySelectorAll("select")[0].value;
+    const email = document.querySelector('input[type="email"]').value.trim();
+    const mobile = document.querySelector('input[type="number"]').value.trim();
+    const course = document.querySelectorAll("select")[1].value;
+
+    // Basic validation
+    if (!name || !gender || !email || !mobile || !course) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    // Log the data (you can replace this with database logic or DOM updates)
+    console.log("Student Info:");
+    console.log("Name:", name);
+    console.log("Gender:", gender);
+    console.log("Email:", email);
+    console.log("Mobile:", mobile);
+    console.log("Course:", course);
+
+    alert("Student data submitted successfully!");
+
+    // Optionally reset the form
+    this.reset();
+  });
+</script>
+
+</html>

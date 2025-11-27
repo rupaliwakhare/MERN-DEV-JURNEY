@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leaderboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .container {
+      display: inline-block;
+      padding: 20px;
+      border: 2px solid #333;
+      border-radius: 10px;
+    }
+    .display-box {
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      width: 100px;
+      font-size: 20px;
+      text-align: center;
+      margin: 5px;
+    }
+    .buttons {
+      margin-bottom: 20px;
+    }
+    .buttons button {
+      font-size: 20px;
+      margin: 5px;
+      width: 50px;
+      height: 50px;
+    }
+    #enter {
+      width: 100px;
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="display-box">
+      <input type="text" id="score" placeholder="Score" readonly>
+      <input type="text" id="min" placeholder="Min" readonly>
+      <input type="text" id="max" placeholder="Max" readonly>
+    </div>
+    <div class="buttons">
+      <!-- Number buttons -->
+      <button onclick="appendNumber(1)">1</button>
+      <button onclick="appendNumber(2)">2</button>
+      <button onclick="appendNumber(3)">3</button><br>
+      <button onclick="appendNumber(4)">4</button>
+      <button onclick="appendNumber(5)">5</button>
+      <button onclick="appendNumber(6)">6</button><br>
+      <button onclick="appendNumber(7)">7</button>
+      <button onclick="appendNumber(8)">8</button>
+      <button onclick="appendNumber(9)">9</button><br>
+      <button onclick="appendNumber(0)">0</button>
+    </div>
+    <button id="enter" onclick="submitScore()">ENTER</button>
+  </div>
+
+  <script>
+    function appendNumber(num) {
+      const scoreBox = document.getElementById('score');
+      scoreBox.value += num;
+    }
+
+    function submitScore() {
+      const scoreBox = document.getElementById('score');
+      const minBox = document.getElementById('min');
+      const maxBox = document.getElementById('max');
+
+      const score = parseInt(scoreBox.value);
+      if (isNaN(score)) {
+        scoreBox.value = '';
+        return;
+      }
+
+      const min = parseInt(minBox.value);
+      const max = parseInt(maxBox.value);
+
+      if (isNaN(min) || score < min) {
+        minBox.value = score;
+      }
+      if (isNaN(max) || score > max) {
+        maxBox.value = score;
+      }
+
+      scoreBox.value = '';
+    }
+  </script>
+</body>
+</html>
