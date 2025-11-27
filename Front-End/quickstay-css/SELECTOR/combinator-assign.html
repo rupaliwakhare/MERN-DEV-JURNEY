@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Boxes with Image and Text</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .alfa {
+      width: 100%;
+      height: 60px;
+      background-color: #00c2fd;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      font-family: sans-serif;
+    }
+
+    .logo {
+      width: 120px;
+      height: 40px;
+      background-color: #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .beta {
+      display: flex;
+      padding: 20px;
+    }
+
+    .sidebar {
+      width: 40%;
+      height: 500px;
+      background-color: #f4f4f4;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sidebar-content {
+      flex: 1;
+    }
+
+    .video-box {
+      margin-top: 20px;
+    }
+
+    .video-box video {
+      width: 200px;
+      height: 100px;
+      border: 1px solid #ccc;
+      
+    }
+    h3{
+        color: blue;
+    }
+
+    .box-area {
+      width: 60%;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      
+    }
+
+    .box {
+      width: 47%;
+      height: 200px;
+      background-color: #ddd;
+     
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+
+    .img-box {
+      width: 100px;
+      height: 80px;
+      background-color: white;
+      border: 1px solid #999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .box p {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <div class="alfa">
+    <div class="logo"><img src="https://img.freepik.com/premium-vector/maika-modern-ai-powered-customer-service-digital-marketing-solution_944011-4723.jpg?w=740" alt=""></div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Abaut </a>
+      <a href="#">Course</a>
+      <a href="#">instructer</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+ 
+  <div class="beta">
+    
+    <div class="sidebar">
+      <div class="sidebar-content">
+        <h3>welcome to study lab</h3>
+        <h1>We Are Study Lab An Larning Center</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique illo autem, aut hic iure sed doloribus corrupti cum fugit numquam minima magnam amet iste esse eum tenetur, veniam, reprehenderit iusto.</p>
+     <br>
+     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, facere deserunt fugit accusamus provident eligendi voluptate dolorem autem incidunt eos minus nostrum nihil totam possimus ad earum a quaerat in.</p>
+    </div>
+
+      
+      <div class="video-box">
+        <video controls>
+          <source src="https://videos.pexels.com/video-files/2086113/2086113-hd_1920_1080_30fps.mp4" type="video/mp4">
+          
+        </video>
+      </div>
+    </div>
+
+    
+    <div class="box-area">
+      <div class="box">
+        <div class="img-box">
+          <img src="https://static.vecteezy.com/system/resources/previews/047/656/219/non_2x/abstract-logo-design-for-any-corporate-brand-business-company-vector.jpg" alt="Image 1">
+        </div>
+        <p>INDIAS best curses avalable</p>
+      </div>
+      <div class="box">
+        <div class="img-box">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4KH-HWxQRRNNF4lBPmXNslzkJtPs644CNlvgRbsld4XIY9PmFWu_jx4IZ1JFTNFIJzf8&usqp=CAU" alt="Image 2">
+        </div>
+        <p>Most populer companes</p>
+      </div>
+      <div class="box">
+        <div class="img-box">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlSPF-rPBSf8Mr4ld5LdKWJD34bD-IGHpNHHBvY9IoHXZmHk-6_vhrjEqNWqlI9tkQGrs&usqp=CAU" alt="Image 3">
+        </div>
+        <p>sintex companes </p>
+      </div>
+      <div class="box">
+        <div class="img-box">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8OV7wvNijFHNjPeQgldFYq3ZgPz5qDtfwdfdqK_KrbcvzSWk3pDrfCRJ9RCAubjGTLsU&usqp=CAU" alt="Image 4">
+        </div>
+        <p>free intership</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

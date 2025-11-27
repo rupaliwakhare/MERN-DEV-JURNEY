@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #head{
+            background-color: yellow;
+            padding: 1px 0;
+        }
+
+        h1{
+            margin-left: 20px;
+        }
+
+
+        /* middle section css */
+
+        #middle{
+            border: 2px solid;
+            height: 500px;
+            margin-top: 30px;
+            font-size: 40px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+          
+        }
+
+        #red{
+            width: 60%;
+            height: 100%;
+            background-color: red;
+          
+        }
+        #grn{
+            width: 35%;
+            height: 100%;
+            /* border: 3px solid greenyellow; */
+            display: grid;
+            gap: 20px;
+        }
+
+        #grn>div{
+            background-color: green;
+            /* border: 5px solid red; */
+        }
+
+
+        /* Medium screen media query */
+         @media all and (min-width:480px) and (max-width:768px){
+            #middle{
+                display: block;
+            }
+
+            #red{
+                width: 100%;
+            }
+
+            #grn{
+                width: 100%;
+                height: 200px;
+                grid-template-columns: repeat(3,1fr);
+                margin-top: 30px;
+            }
+         }
+
+           /* small screen media query */
+         @media all and (min-width:320px) and (max-width:479px){
+            #middle{
+                display: block;
+            }
+
+            #red{
+                width: 100%;
+            }
+
+            #grn{
+                width: 100%;
+                /* height: 200px; */
+                grid-template-columns: repeat(1,1fr);
+                margin-top: 30px;
+            }
+         }
+
+</style>
+</head>
+<body>
+    <a href="./index.html">Home</a>
+    <a href="./perob1.html">prob1</a>
+    <div id="head">
+        <h1>Navigation</h1>
+    </div>
+
+
+    <!-- middle section -->
+
+    <div id="middle">
+         <div id="red">red</div>
+
+
+         <div id="grn">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+         </div>
+    </div>
+</body>
+</html>

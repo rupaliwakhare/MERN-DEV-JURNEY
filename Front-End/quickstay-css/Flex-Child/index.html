@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            width: 100%;
+            display: flex;
+            border: 5px solid;
+        }
+
+        #main div{
+            font-size: 40px;
+            font-weight: bold;
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+        }
+
+        #main>div:nth-child(1){
+            border: 5px solid rgb(51, 66, 153);
+            order: 10;
+        }
+        #main>div:nth-child(2){
+            border: 5px solid rgb(71, 153, 51);
+            order: 12;
+        }
+        #main>div:nth-child(3){
+            border: 5px solid rgb(138, 51, 153);
+            
+        }
+        #main>div:nth-child(4){
+            border: 5px solid rgb(51, 66, 153);
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main">
+     
+        <div>box-1</div>
+        <div>box-2</div>
+        <div>box-3</div>
+        <div>box-4</div>
+        
+    </div>
+</body>
+</html>
