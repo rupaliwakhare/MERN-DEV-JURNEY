@@ -1,0 +1,1 @@
+// 18.	18. Print the multiplication tables from 1 to 5 using nested loops

@@ -1,0 +1,1 @@
+// 19.	19. Print a square pattern using stars (5 rows and 5 columns).

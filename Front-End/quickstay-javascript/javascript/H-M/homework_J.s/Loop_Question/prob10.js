@@ -1,0 +1,1 @@
+// 10.	10. Take a number and print its reverse (e.g. 123 → 321).
