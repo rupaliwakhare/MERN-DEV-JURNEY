@@ -1,4 +1,4 @@
-import express, { json } from "express"
+import express from "express"
 import fs from "fs"
 
 
@@ -37,6 +37,19 @@ app.post("/userdata",(req,res)=>{
             if(err) res.send(err)
                 else res.send("data posted done")
         })
+    })
+})
+
+app.post("/studentdata",(req,res)=>{
+    fs.readFile("data.json","utf-8",(err,data)=>{
+        if(err) res.send(err)
+            let jsondata = JSON.parse(data)
+        jsondata.student.push(req.body)
+        fs.writeFile("data.json",JSON.stringify(jsondata),(err)=>{
+            if(err) res.send(err)
+                else res.send("data will be posted !")
+        })
+
     })
 })
 
