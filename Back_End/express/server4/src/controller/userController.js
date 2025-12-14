@@ -13,5 +13,28 @@ const user = await userModel.create({
  res.json({success:true,massage:"User Created",user})
 };
 
+// getuser
 
-export default createUser;
+const getUser = async (req,res)=>{
+    let users= await userModel.find()
+    res.send(users)
+}
+
+// update user
+
+const updateUser = async(req,res)=>{
+   const id = req.params.id
+   const users = await userModel.findByIdAndUpdate(id,req.body)
+   res.send("user updated",users)
+
+}
+// delete user
+
+const deleteUser = async(req,res)=>{
+   const id = req.params.id
+   const users = await userModel.findByIdAndDelete(id,req.body)
+   res.send("user deleted",users)
+
+}
+
+export {createUser,getUser,updateUser,deleteUser};
