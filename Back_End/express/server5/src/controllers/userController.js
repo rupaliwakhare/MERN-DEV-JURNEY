@@ -1,9 +1,42 @@
 import userModel from "../models/userModel.js";
+import bcrypt from "bcrypt"
 
 // Create User
-const createUser = async (req, res) => {
+// const createUser = async (req, res) => {
+//   try {
+//     const user = await userModel.create(req.body);
+//     res.status(201).json({ success: true, message: "User created", user });
+//   } catch (error) {
+//     res.status(500).json({
+//       success: false,
+//       message: "Error creating user",
+//       error: error.message,
+//     });
+//   }
+// };
+
+
+// Signup user
+const Signup = async (req, res) => {
   try {
-    const user = await userModel.create(req.body);
+    const {name,email,age,password,mobile} = req.body;
+
+    const existemail = await userModel.findOne({email})
+    if(existemail) return res.status(400).json({success:false,message:"Email is already registered"})
+
+    const existemobile = await userModel.findOne({ mobile });
+    if (existemobile) return res .status(400).json({ success: false, message: "Mobile number is already registered" });
+
+
+
+    const hashpassword = await bcrypt.hash(password, 10)
+
+    const user = await userModel.create({
+        name,
+        email,
+        age,
+        password: hashpassword,
+        mobile});
     res.status(201).json({ success: true, message: "User created", user });
   } catch (error) {
     res.status(500).json({
@@ -13,6 +46,26 @@ const createUser = async (req, res) => {
     });
   }
 };
+
+// Login user
+const Login = async(req,res) => {
+    try {
+        const {email,password} = req.body;
+        const user = await userModel.findOne({ email });
+        if (!user) return res.status(400).json({ success: false, message: "User not found" });
+    } catch (error) {
+        
+    }
+}
+
+
+
+
+
+
+
+
+
 
 // Get All Users
 const getUsers = async (req, res) => {
@@ -89,4 +142,4 @@ const deleteUser = async (req, res) => {
   }
 };
 
-export { createUser, getUsers, getUserById, updateUser, deleteUser };
+export { Signup,Login, getUsers, getUserById, updateUser, deleteUser };
