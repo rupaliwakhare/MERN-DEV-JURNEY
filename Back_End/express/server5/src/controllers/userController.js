@@ -1,5 +1,9 @@
 import userModel from "../models/userModel.js";
-import bcrypt from "bcrypt"
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 // Create User
 // const createUser = async (req, res) => {
@@ -51,9 +55,20 @@ const Signup = async (req, res) => {
 const Login = async(req,res) => {
     try {
         const {email,password} = req.body;
+
         const user = await userModel.findOne({ email });
         if (!user) return res.status(400).json({ success: false, message: "User not found" });
+
+        const match = await bcrypt.compare(password,user.password);
+        if(!match) return res.status(4000).json({sucess:true,message:"Invalid credinatial"});
+
+        const token = jwt.sign({ id: user._id }, process.env.SECRET_KEY, {expiresIn: "1h",});
+
+
+        res.json({sucess:true,message:"Login sucessful",user,token})
+
     } catch (error) {
+        console.log(error);
         
     }
 }
