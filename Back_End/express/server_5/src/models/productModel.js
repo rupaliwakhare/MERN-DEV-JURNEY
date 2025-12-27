@@ -8,4 +8,4 @@ const productSchema = new mongoose.Schema({
 
 const productModel = mongoose.model("Product",productSchema)
 
-export default productModel;
+export default productModel; 
