@@ -2,6 +2,8 @@ import express from "express";
 import connectDB from "../src/config/db.js";
 import productrouter from "./routes/productRoute.js";
 import dotenv from "dotenv"
+import userrouter from "./routes/userRouter.js";
+import contactRouter from "./routes/contactRoute.js";
 dotenv.config()
 
 const app = express();
@@ -17,7 +19,9 @@ app.get("/",()=>{
     
 })
 
-app.use("/api/product",productrouter)
+app.use("/api/product",productrouter);
+app.use("/api/user",userrouter);
+app.use("/api",contactRouter)
 
 app.listen(PORT,()=>{
  console.log(`server is running on http://localhost:${PORT}`);
